@@ -1,6 +1,6 @@
-import React from 'react';
-
-// Routes for home and the shopping cart. THESE GO IN HERE!
+import React, { useState } from 'react';
+import { productInterface } from './utils/productData';
+// Routes for home and the shopping cart and storefront. THESE GO IN HERE!
 //navbar that lets people go to home and cart MAKE SURE TO LOAD NAVBAR COMPONENT IN EACH ROUTE
 //navbar needs state to display how many items are in cart
 // array that contains each item to be mapped into the main page / shopping cart
@@ -21,10 +21,14 @@ import React from 'react';
 // CHECKOUT GET NUMBER OF ITEMS IN CART AND ALSO HAS ADD TO CART AND REMOVE FUNCTIONS... ALONG WITH TOTAL PRICE 
 // CARD : PULLS ADD TO CART FUNCTION FROM APP
 
+// DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
 
 
 
 function App() {
+
+  const [currCat, setCurrCart] = useState<productInterface[]>([])
+
   return (
     <div>shopcart</div>
   );
