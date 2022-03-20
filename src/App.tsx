@@ -28,9 +28,10 @@ import { productInterface } from './utils/productData';
 function App() {
 
   const [currCat, setCurrCart] = useState<productInterface[]>([])
-
   return (
-    <div>shopcart</div>
+    
+    <div>shopcart
+    </div>
   );
 }
 
