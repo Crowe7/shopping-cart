@@ -30,9 +30,10 @@ import { v4 as uuid } from 'uuid';
 
 // TODO TOMMOROW
 // TODO MAKE RESPONSIVE NAVBAR
-// ROUTES TO CHECKOUT AND HOMEPAGE
 // TODO TESTED TO LOAD THOSE COMPONENTS
 
+
+// <Redirect to="/result" /> or history.push(url) is how to make a button take to a diffrent page 
 function App() {
 
   const [currCart, setCurrCart] = useState<productInterface[]>([]);
