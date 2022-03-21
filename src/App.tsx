@@ -48,12 +48,21 @@ function App() {
   }
 
   const handleRemoveFromCart = (name:string) => () => {
-
+    if(currCart.length < 1) {
+      return 
+    }
+    for(let product of currCart) {
+      if(product.Name === name) {
+        let ID = product.ID
+        setCurrCart(currCart.filter((product)=> (product.ID !== ID)))
+        break
+      }
+    }
   }
   
   return (
       <Routes>
-        <Route path='/' element={<Navbar h={handleAddToCart} />}>
+        <Route path='/' element={<Navbar/>}>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/products' element={<Storefront/>}/>
