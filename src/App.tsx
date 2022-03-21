@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { productInterface, ProductData} from './utils/productData';
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
+import Checkout from './components/Checkout';
+import { Storefront } from './components/Storefront';
+
 // Routes for home and the shopping cart and storefront. THESE GO IN HERE!
 // navbar that lets people go to home and cart MAKE SURE TO LOAD NAVBAR COMPONENT IN EACH ROUTE
 // navbar needs state to display how many items are in cart
@@ -45,6 +48,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Navbar />}>
           <Route path='/' element={<Homepage/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/products' element={<Storefront/>}/>
         </Route>
       </Routes>
   );
