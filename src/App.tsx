@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { productInterface, ProductData} from './utils/productData';
+import Navbar from './components/Navbar';
+import Homepage from './components/Homepage';
 // Routes for home and the shopping cart and storefront. THESE GO IN HERE!
 // navbar that lets people go to home and cart MAKE SURE TO LOAD NAVBAR COMPONENT IN EACH ROUTE
 // navbar needs state to display how many items are in cart
@@ -22,7 +25,8 @@ import { productInterface, ProductData} from './utils/productData';
 // DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
 
 // TODO TOMMOROW
-// TODO MAKE RESPONSIVE NAVBAR THAT ROUTES TO CHECKOUT AND HOMEPAGE
+// TODO MAKE RESPONSIVE NAVBAR
+// ROUTES TO CHECKOUT AND HOMEPAGE
 // TODO TESTED TO LOAD THOSE COMPONENTS
 
 function App() {
@@ -38,9 +42,11 @@ function App() {
   }
   
   return (
-    <div>shopcart
-
-    </div>
+      <Routes>
+        <Route path='/' element={<Navbar />}>
+          <Route path='/' element={<Homepage/>}/>
+        </Route>
+      </Routes>
   );
 }
 
