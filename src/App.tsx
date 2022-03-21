@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { productInterface, ProductData} from './utils/productData';
-import Navbar from './components/Navbar';
+import {Navbar} from './components/Navbar';
 import Homepage from './components/Homepage';
 import Checkout from './components/Checkout';
 import { Storefront } from './components/Storefront';
+import { v4 as uuid } from 'uuid';
 
 // Routes for home and the shopping cart and storefront. THESE GO IN HERE!
 // navbar that lets people go to home and cart MAKE SURE TO LOAD NAVBAR COMPONENT IN EACH ROUTE
@@ -39,14 +40,20 @@ function App() {
   const handleAddToCart = (name:string) => () => {
     for(let product of ProductData) {
       if(product.Name === name) {
-        return setCurrCart(prevState => [...prevState, product]);
+        const productToAdd = {...product, ID: uuid()}
+        setCurrCart(prevState => [...prevState, productToAdd]);
+        break
       }
     }
+  }
+
+  const handleRemoveFromCart = (name:string) => () => {
+
   }
   
   return (
       <Routes>
-        <Route path='/' element={<Navbar />}>
+        <Route path='/' element={<Navbar h={handleAddToCart} />}>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/products' element={<Storefront/>}/>
