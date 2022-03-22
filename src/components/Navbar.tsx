@@ -34,7 +34,10 @@ export const Navbar = ({cart}: MyProps) => {
                       <Button size='lg' sx={{marginRight:20}} onClick={() => history('/products')}>Products</Button>
                       <Box sx={{display: "flex", flexDirection: "column"}}>
                         <Button aria-label='Checkout' sx={{height:45, width: 45, padding: 0, fontSize:20, borderRadius:"25px" }} onClick={() => history('/checkout')}><FontAwesomeIcon icon={faCartShopping} /></Button>
-                        <Badge sx={{position: "absolute", width: 30, marginTop: 28}} size='md'>{`${CartQuantity}`}</Badge>
+                        {CartQuantity != undefined && CartQuantity > 0 &&
+                          <Badge sx={{position: "absolute", width: 30, marginTop: 28}} size='md'>{`${CartQuantity}`}</Badge>
+                        }
+                        
                       </Box>
                     </Box>
                   </Box>
