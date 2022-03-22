@@ -20,7 +20,6 @@ export const Navbar = ({cart}: MyProps) => {
     setCartQuantity(cart?.length)
   }, [cart])
 
-  console.log()
   return (
     <AppShell
       padding={"md"}
@@ -35,7 +34,7 @@ export const Navbar = ({cart}: MyProps) => {
                       <Box sx={{display: "flex", flexDirection: "column"}}>
                         <Button aria-label='Checkout' sx={{height:45, width: 45, padding: 0, fontSize:20, borderRadius:"25px" }} onClick={() => history('/checkout')}><FontAwesomeIcon icon={faCartShopping} /></Button>
                         {CartQuantity != undefined && CartQuantity > 0 &&
-                          <Badge sx={{position: "absolute", width: 30, marginTop: 28}} size='md'>{`${CartQuantity}`}</Badge>
+                          <Badge aria-label='Quantity' sx={{position: "absolute", width: 30, marginTop: 28}} size='md'>{`${CartQuantity}`}</Badge>
                         }
                         
                       </Box>
