@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route,} from 'react-router-dom';
 import { productInterface, ProductData} from './utils/productData';
 import {Navbar} from './components/Navbar';
 import Homepage from './components/Homepage';
@@ -63,7 +63,7 @@ function App() {
   
   return (
       <Routes>
-        <Route path='/' element={<Navbar/>}>
+        <Route path='/' element={<Navbar cart={currCart}/>}>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/products' element={<Storefront/>}/>
