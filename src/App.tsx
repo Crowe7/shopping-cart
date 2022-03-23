@@ -7,7 +7,6 @@ import Checkout from './components/Checkout';
 import { Storefront } from './components/Storefront';
 import { v4 as uuid } from 'uuid';
 
-// navbar needs state to display how many items are in cart
 // checkout needs to show whats in cart and also allow changes to quantity in popup
 
 // product cards need plus and minus buttons along with being able to type in quantity number
@@ -18,7 +17,6 @@ import { v4 as uuid } from 'uuid';
 
 // TODO COMPONENTS:
 // APP : STATE IS WHATS IN CART
-// NAVBAR : GET NUMBER OF ITEMS IN CART BY USEEFFECT HOOK CHANGING WHEN CART STATE CHANGES. CHECKING ARRAY.LENGTH PASSED BY APP
 // HOMEPAGE : PULLS STATE FROM APP
 // CHECKOUT GET NUMBER OF ITEMS IN CART AND ALSO HAS ADD TO CART AND REMOVE FUNCTIONS... ALONG WITH TOTAL PRICE 
 // CARD : PULLS ADD TO CART FUNCTION FROM APP
@@ -26,7 +24,10 @@ import { v4 as uuid } from 'uuid';
 // DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
 
 // TODO TOMMOROW
-    
+    //  ADD CLEAR CART FUNCTION
+    //ADD RESPONSIVE HOMEPAGE 
+    // ADD BUTTON THAT TAKES TO PRODUCT PAGE
+    // TESTS FOR IT
 
 
 // 
@@ -58,6 +59,10 @@ function App() {
         break
       }
     }
+  }
+
+  const handleClearCart = () => {
+    setCurrCart([]);
   }
   
   return (
