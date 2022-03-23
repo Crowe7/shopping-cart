@@ -23,10 +23,10 @@ export const Navbar = ({cart}: MyProps) => {
   return (
     <AppShell
       padding={"md"}
-      header={<Header height={80} p="xs">
+      header={<Header height={80} p="xs" sx={{backgroundColor: "#F1FAEE"}}>
                 { <Box sx={{display:"flex", alignItems: "center",  justifyContent:"space-between", '@media (max-width: 755px)': {justifyContent:"center"} }}>
                     <MediaQuery smallerThan={"sm"} styles={{display:"none"}}>
-                      <Title sx={{}} order={1}>Boardgame Haven</Title>
+                      <Title sx={{color: "#1D3557"}} order={1}>Boardgame Haven</Title>
                     </MediaQuery>
                     <Box sx={{display: "flex"}}>
                       <Button size='lg' sx={{marginRight:10, width: 140}} onClick={() => history('/')}>Home</Button>
@@ -34,7 +34,7 @@ export const Navbar = ({cart}: MyProps) => {
                       <Box sx={{display: "flex", flexDirection: "column"}}>
                         <Button aria-label='Checkout' sx={{height:45, width: 45, padding: 0, fontSize:20, borderRadius:"25px" }} onClick={() => history('/checkout')}><FontAwesomeIcon icon={faCartShopping} /></Button>
                         {CartQuantity != undefined && CartQuantity > 0 &&
-                          <Badge aria-label='Quantity' sx={{position: "absolute", width: 30, marginTop: 28}} size='md'>{`${CartQuantity}`}</Badge>
+                          <Badge aria-label='Quantity' sx={{position: "absolute", width: 30, marginTop: 28, backgroundColor:"#fe6d73", color:"white"}} size='md'>{`${CartQuantity}`}</Badge>
                         }
                         
                       </Box>
