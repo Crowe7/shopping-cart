@@ -5,10 +5,11 @@ jest.mock('react-router-dom', () => ({
 })); // had to use this to get tests to run 
 
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import {Navbar} from '../components/Navbar';
 import {Routes} from 'react-router-dom'
 import { productInterface } from '../utils/productData';
+import userEvent from '@testing-library/user-event'
 // aria-label='edit'> add that onto label buttons to test
 describe('Navbar', () => {
 

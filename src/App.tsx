@@ -24,15 +24,9 @@ import { v4 as uuid } from 'uuid';
 // DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
 
 // TODO TOMMOROW
-    //ADD RESPONSIVE HOMEPAGE 
-    // ADD BUTTON THAT TAKES TO PRODUCT PAGE
-    // TESTS FOR IT
-
-
+    // TRANSISTIONS FOR HOMEPAGE
 // 
 
-
-// <Redirect to="/result" /> or history.push(url) is how to make a button take to a diffrent page 
 function App() {
 
   const [currCart, setCurrCart] = useState<productInterface[]>([]);
