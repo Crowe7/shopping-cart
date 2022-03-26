@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, useEffect, useState } from 'react'
 import { AppShell, Title, Header, Box, MediaQuery, Button, Badge } from '@mantine/core';
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { productInterface } from '../utils/productData';
@@ -11,7 +11,6 @@ type MyProps = {
 
 
 export const Navbar = ({cart}: MyProps) => {
-  const history = useNavigate();
   const [CartQuantity, setCartQuantity] = useState(cart?.length)
 
 
@@ -29,11 +28,11 @@ export const Navbar = ({cart}: MyProps) => {
                       <Title sx={{color: "#1D3557"}} order={1}>Boardgame Haven</Title>
                     </MediaQuery>
                     <Box sx={{display: "flex"}}>
-                      <Button size='lg' sx={{marginRight:10, width: 140}} onClick={() => history('/')}>Home</Button>
-                      <Button size='lg' sx={{marginRight:20}} onClick={() => history('/products')}>Products</Button>
+                      <Button size='lg' sx={{marginRight:10, width: 140}} component={Link} to='/'>Home</Button>
+                      <Button size='lg' sx={{marginRight:20}} component={Link} to='/products'>Products</Button>
                       <Box sx={{display: "flex", flexDirection: "column"}}>
-                        <Button aria-label='Checkout' sx={{height:45, width: 45, padding: 0, fontSize:20, borderRadius:"25px" }} onClick={() => history('/checkout')}><FontAwesomeIcon icon={faCartShopping} /></Button>
-                        {CartQuantity != undefined && CartQuantity > 0 &&
+                        <Button aria-label='Checkout' sx={{height:45, width: 45, padding: 0, fontSize:20, borderRadius:"25px" }} component={Link} to='/checkout'><FontAwesomeIcon icon={faCartShopping} /></Button>
+                        {CartQuantity !== undefined && CartQuantity > 0 &&
                           <Badge aria-label='Quantity' sx={{position: "absolute", width: 30, marginTop: 28, backgroundColor:"#fe6d73", color:"white"}} size='md'>{`${CartQuantity}`}</Badge>
                         }
                         
