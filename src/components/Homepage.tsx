@@ -11,7 +11,11 @@ export default function Homepage() {
 
         <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", height: 150}}>
 
-          <Title sx={{fontSize: 40, padding: 20, '@media (max-width: 450px)': {color: "#F1FAEE"}}} order={1}>Unlo<span style={{color: "#F1FAEE",}}>cking Fun for the Whole Fam</span>ily! </Title>
+          <Title sx={{
+                        fontSize: 40,
+                        padding: 20, 
+                        '@media (max-width: 450px)': {color: "#F1FAEE", marginLeft: "20px"}
+                      }} order={1}>Unlo<span style={{color: "#F1FAEE",}}>cking Fun for the Whole Fam</span>ily! </Title>
           <Button sx={{width: "50%", padding: 20}} size='xl' component={Link} to='/products'>View Products</Button>
           <Image
             src={homepageBlob}
@@ -20,7 +24,7 @@ export default function Homepage() {
           />
         </Box>
         <Image
-          sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (max-width: 1450px)': {width: "500px"}}}
+          sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (max-width: 1450px) and (min-width: 700px)': {width: "500px"}}}
           radius="lg"
           src={homepageImage}
 
