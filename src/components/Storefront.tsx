@@ -5,7 +5,7 @@ import { ProductData } from '../utils/productData'
 
 export const Storefront = () => {
   return (
-    <SimpleGrid cols={3}>
+    <SimpleGrid cols={4} spacing="xl">
       {ProductData.map((info) => {
           return <Card shadow="sm" key={`${info.ID}`}>
             <Card.Section>
