@@ -6,7 +6,7 @@ import {MemoryRouter as Router} from 'react-router-dom'
 
 describe('Homepage', () => {
 
-    test("renders page", () => {
+    test("renders image", () => {
         render(
             <Router>
                 <Homepage/>
@@ -16,6 +16,14 @@ describe('Homepage', () => {
             "Group Of Creative Friends Sitting At Wooden Table. People Having Fun While Playing Board Game"
         
         )).toBeInTheDocument()
+    })
+    test("renders products button", () => {
+        render(
+            <Router>
+                <Homepage/>
+            </Router>
+        );
+        expect(screen.getByRole("link", {name: "View Products"})).toBeInTheDocument()
     })
 })
 

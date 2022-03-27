@@ -1,12 +1,9 @@
 import React from 'react';
-import { fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import {render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import {Navbar} from '../components/Navbar';
-import {createMemoryHistory} from 'history'
-import {Router} from 'react-router-dom'
 import {MemoryRouter as MRouter} from 'react-router-dom'
 import { productInterface } from '../utils/productData';
 import userEvent from '@testing-library/user-event'
-import App from '../App'
 // aria-label='edit'> add that onto label buttons to test
 describe('Navbar', () => {
 
