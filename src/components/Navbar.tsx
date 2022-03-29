@@ -22,7 +22,7 @@ export const Navbar = ({cart}: MyProps) => {
   return (
     <AppShell
       padding={0}
-      header={<Header height={80} p="xs" sx={{backgroundColor: "#F1FAEE", position: "sticky"}}>
+      header={<Header height={80} p="xs" sx={{backgroundColor: "#eef7fa", position: "sticky"}}>
                 { <Box sx={{display:"flex", alignItems: "center",  justifyContent:"space-between", '@media (max-width: 755px)': {justifyContent:"center"} }}>
                     <MediaQuery smallerThan={"sm"} styles={{display:"none"}}>
                       <Title sx={{color: "#1D3557"}} order={1}>Boardgame Haven</Title>

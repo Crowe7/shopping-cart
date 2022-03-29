@@ -17,7 +17,7 @@ export const Storefront = () => {
       ]}
     >
       {ProductData.map((info) => {
-          return <Card sx={{backgroundColor: "#EAF5ED",  }} shadow="sm" key={`${info.ID}`}>
+          return <Card sx={{backgroundColor: "#eef7fa",  }} shadow="sm" key={`${info.ID}`}>
             <Card.Section>
               <Image src={info.Img} height={450} alt={info.Name} fit={"contain"} />
             </Card.Section>
