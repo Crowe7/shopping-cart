@@ -6,7 +6,7 @@ import Homepage from './components/Homepage';
 import Checkout from './components/Checkout';
 import { Storefront } from './components/Storefront';
 import { v4 as uuid } from 'uuid';
-import Product from './components/Product';
+import {Product} from './components/Product';
 
 // checkout needs to show whats in cart and also allow changes to quantity in popup
 
@@ -65,7 +65,7 @@ function App() {
           <Route path='/' element={<Homepage/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/products' element={<Storefront/>}/>
-          <Route path="/products/:productID" element={<Product/>}/>
+          <Route path="/products/:productID" element={<Product addToCart={handleAddToCart}/>}/>
         </Route>
       </Routes>
   );
