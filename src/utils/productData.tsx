@@ -19,7 +19,7 @@ export interface productInterface {
     Img: string,
     ID: string,
   }
-
+// would be better to turn this into a function that returns the data..
 export const ProductData:productInterface[] = [
   {Name: "Azul", Price: 40, Img: Azul, ID: uuidv4() },
   {Name: "Calico", Price: 40, Img: Calico, ID: uuidv4() },
