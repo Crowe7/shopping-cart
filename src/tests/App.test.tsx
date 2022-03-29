@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
-import {MemoryRouter as MRouter} from 'react-router-dom'
+import {MemoryRouter as MRouter} from 'react-router-dom';
 describe("App", () => {
     test("contains navbar", () => {
         render(
