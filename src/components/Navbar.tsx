@@ -33,7 +33,7 @@ export const Navbar = ({cart}: MyProps) => {
                       <Box sx={{display: "flex", flexDirection: "column"}}>
                         <Button aria-label='Checkout' sx={{height:45, width: 45, padding: 0, fontSize:20, borderRadius:"25px" }} component={Link} to='/checkout'><FontAwesomeIcon icon={faCartShopping} /></Button>
                         {CartQuantity !== undefined && CartQuantity > 0 &&
-                          <Badge aria-label='Quantity' sx={{position: "absolute", width: 30, marginTop: 28, backgroundColor:"#fe6d73", color:"white"}} size='md'>{`${CartQuantity}`}</Badge>
+                          <Badge aria-label='Quantity' sx={{position: "absolute", padding:6 , marginTop: 28, backgroundColor:"#fe6d73", color:"white"}} size='md'>{`${CartQuantity}`}</Badge>
                         }
                         
                       </Box>
