@@ -20,11 +20,11 @@ export const Product = ({addToCart}: MyProps) => {
 
   if(productInfo) {  
     return (
-      <div>{productInfo.Name}</div>
+      <h1>{productInfo.Name}</h1>
     )
   }
   return (
-    <div>This will be an error page i suppose</div>
+    <h1>error</h1>
   )
 }
 
