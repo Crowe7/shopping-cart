@@ -20,7 +20,7 @@ export default function Homepage() {
           />
         </Box>
         <Image
-          sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (max-width: 1450px)': {width: "500px"}}}
+          sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (min-width: 1450px) and (max-width: 1600px)': {width: "500px"}}}
           radius="lg"
           src={homepageImage}
 
