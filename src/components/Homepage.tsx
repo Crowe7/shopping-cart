@@ -24,7 +24,11 @@ export default function Homepage() {
           />
         </Box>
         <Image
+<<<<<<< HEAD
           sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (max-width: 1450px) and (min-width: 700px)': {width: "500px"}}}
+=======
+          sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (min-width: 1450px) and (max-width: 1600px)': {width: "500px"}}}
+>>>>>>> 791af6d89cd397730599edf522d2a26ce3cc44fa
           radius="lg"
           src={homepageImage}
 

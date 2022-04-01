@@ -6,6 +6,7 @@ import Homepage from './components/Homepage';
 import Checkout from './components/Checkout';
 import { Storefront } from './components/Storefront';
 import { v4 as uuid } from 'uuid';
+import {Product} from './components/Product';
 
 // checkout needs to show whats in cart and also allow changes to quantity in popup
 
@@ -23,11 +24,22 @@ import { v4 as uuid } from 'uuid';
 
 // DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
 
+<<<<<<< HEAD
 /* TODO TOMMOROW
     TEST THAT ALL BUTTONS AND PICTURES ARE ON PRODUCT PAGE
     IMPLEMENT THE ROUTING TO TAKE TO PRODUCT PAGE
     MAKE PRODUCT SCREEN W/O LOGIC 
 */
+=======
+// TODO TOMMOROW
+    // FINISH STYLING ERROR PAGE
+    // TEST PRODUCT PAGE ADD TO CART BUTTON
+    // ADD ANOTHER CART FUNCTION THAT TAKES A NUMBER AND NAME, SO WHEN YOU TYPE IN HOW MANY OF AN ITEM YOU WANT IT FILTERS 
+    // CART AND CHECKS IF AMOUNT IS HIGHER OR LOWER
+    // IF LOWER CALL REMOVE FROM CART UNTIL YOU REACH THE NUMBER
+    // IF HIGHER CALL ADD TO CART UNTIL REACH NUMBER
+// 
+>>>>>>> 791af6d89cd397730599edf522d2a26ce3cc44fa
 
 function App() {
 
@@ -66,6 +78,7 @@ function App() {
           <Route path='/' element={<Homepage/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/products' element={<Storefront/>}/>
+          <Route path="/products/:productID" element={<Product addToCart={handleAddToCart}/>}/>
         </Route>
       </Routes>
   );

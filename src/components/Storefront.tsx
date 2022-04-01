@@ -1,6 +1,6 @@
 import { Box, Button, Card, Code, Image, SimpleGrid, Text } from '@mantine/core'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { ProductData } from '../utils/productData'
 
 export const Storefront = () => {
@@ -17,7 +17,7 @@ export const Storefront = () => {
       ]}
     >
       {ProductData.map((info) => {
-          return <Card sx={{backgroundColor: "#EAF5ED",  }} shadow="sm" key={`${info.ID}`}>
+          return <Card sx={{backgroundColor: "#eef7fa",  }} shadow="sm" key={`${info.ID}`}>
             <Card.Section>
               <Image src={info.Img} height={450} alt={info.Name} fit={"contain"} />
             </Card.Section>

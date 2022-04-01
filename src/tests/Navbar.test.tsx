@@ -34,7 +34,7 @@ describe('Navbar', () => {
          expect(screen.getByRole("link", {name:"Home"})).toBeInTheDocument()
     });
     test("cart quantity shows up", () => {
-        let cartItem = [{Name: "Azul", Price: 40, Img: '', ID: null}]
+        let cartItem = [{Name: "Azul", Price: 40, Img: '', ID: "q"}]
         render(
             <MRouter>
                 <Navbar cart={cartItem}/>
@@ -43,7 +43,7 @@ describe('Navbar', () => {
         expect(screen.getByLabelText("Quantity")).toBeInTheDocument()
     });
     test("cart quantity shows correct amount", () => {
-        let cartItem = [{Name: "Azul", Price: 40, Img: '', ID: null}]
+        let cartItem = [{Name: "Azul", Price: 40, Img: '', ID: "q"}]
         render(
             <MRouter>
                 <Navbar cart={cartItem}/>
