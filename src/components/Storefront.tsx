@@ -1,6 +1,6 @@
 import { Box, Button, Card, Code, Image, SimpleGrid, Text } from '@mantine/core'
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { ProductData } from '../utils/productData'
 
 export const Storefront = () => {

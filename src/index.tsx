@@ -4,12 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { NotificationsProvider } from '@mantine/notifications';
 ReactDOM.render(
   
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path='*' element={<App />}></Route>
+            <Route path='*' element={<NotificationsProvider> <App /> </NotificationsProvider>}></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>,

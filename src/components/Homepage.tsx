@@ -2,7 +2,7 @@ import React from 'react'
 import background from '../media/background.svg'
 import homepageImage from '../media/homepageImage.jpg'
 import homepageBlob from '../media/homepageBlob.png'
-import { Box, Image, Title, Button, Transition} from '@mantine/core'
+import { Box, Image, Title, Button} from '@mantine/core'
 import {Link} from 'react-router-dom'
 export default function Homepage() {
   return (

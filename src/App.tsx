@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Routes, Route,} from 'react-router-dom';
 import { productInterface, ProductData} from './utils/productData';
 import {Navbar} from './components/Navbar';
@@ -28,7 +28,6 @@ import {Product} from './components/Product';
   // NEED TO USE NOTIFICATION SYSTEM FOR ADDING TOCART 
   // TITLE WILL BE (PRODUCT) WAS SUCCESFULLY ADDED TO CART, BODY IS CURRENT CART TOTAL ($PRICE)
   // PRICE TOTAL FUNCTION
-    // FINISH STYLING ERROR PAGE
     // ADD ANOTHER CART FUNCTION THAT TAKES A NUMBER AND NAME, SO WHEN YOU TYPE IN HOW MANY OF AN ITEM YOU WANT IT FILTERS 
     // CART AND CHECKS IF AMOUNT IS HIGHER OR LOWER
     // IF LOWER CALL REMOVE FROM CART UNTIL YOU REACH THE NUMBER
@@ -65,6 +64,11 @@ function App() {
   const handleClearCart = () => {
     setCurrCart([]);
   }
+
+
+  const cartValue = currCart.reduce(
+    (prevProduct, currProduct) => prevProduct + currProduct.Price, 0
+  );
   
   return (
       <Routes>
@@ -72,7 +76,7 @@ function App() {
           <Route path='/' element={<Homepage/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/products' element={<Storefront/>}/>
-          <Route path="/products/:productID" element={<Product addToCart={handleAddToCart}/>}/>
+          <Route path="/products/:productID" element={<Product value={cartValue} addToCart={handleAddToCart}/>}/>
         </Route>
       </Routes>
   );

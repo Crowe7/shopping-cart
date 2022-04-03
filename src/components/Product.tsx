@@ -1,17 +1,38 @@
 import { Box, Button, SimpleGrid, Title } from '@mantine/core'
 import { Link } from 'react-router-dom'
-import React, { MouseEventHandler } from 'react'
+import React, { MouseEventHandler, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import {getProduct} from '../utils/data'
 import { productInterface } from '../utils/productData'
+import { showNotification } from '@mantine/notifications';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 // function(arg: type): returnType how to type out function props
 
 type MyProps = {
   addToCart(name: string) : MouseEventHandler<HTMLButtonElement>
+  value: number
 }
 
 
-export const Product = ({addToCart}: MyProps) => {
+export const Product = ({addToCart, value}: MyProps) => {
+
+  const mounted = useRef(false);
+  useEffect(() => {
+    if(!mounted.current) {
+      mounted.current = true
+      return
+    }
+    showNotification({
+      title: "Succesfully Added To Cart!",
+      message: `Cart Total is $${value}`,
+      color: "lime",
+      autoClose: 1500,
+      icon: <FontAwesomeIcon icon={faCheck}/>,
+    })
+  },[value])
+
+
   let params = useParams();
   let productInfo: null | productInterface
   
@@ -20,7 +41,7 @@ export const Product = ({addToCart}: MyProps) => {
   } catch(error) {
     productInfo = null
   }
-
+  
   if(productInfo) {  
     return (
       <Box sx={{display: "flex", justifyContent: "center", height: "90vh", alignItems: "center", '@media (max-width: 880px)': {flexDirection: "column", marginTop: 100}}}>
