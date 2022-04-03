@@ -10,7 +10,7 @@ ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-            <Route path='*' element={<NotificationsProvider> <App /> </NotificationsProvider>}></Route>
+            <Route path='*' element={<NotificationsProvider limit={3} autoClose={1500}> <App /> </NotificationsProvider>}></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>,

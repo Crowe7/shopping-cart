@@ -3,7 +3,7 @@ import {Routes, Route,} from 'react-router-dom';
 import { productInterface, ProductData} from './utils/productData';
 import {Navbar} from './components/Navbar';
 import Homepage from './components/Homepage';
-import Checkout from './components/Checkout';
+import {Checkout} from './components/Checkout';
 import { Storefront } from './components/Storefront';
 import { v4 as uuid } from 'uuid';
 import {Product} from './components/Product';
@@ -25,8 +25,6 @@ import {Product} from './components/Product';
 // DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
 
 // TODO TOMMOROW
-  // NEED TO USE NOTIFICATION SYSTEM FOR ADDING TOCART 
-  // TITLE WILL BE (PRODUCT) WAS SUCCESFULLY ADDED TO CART, BODY IS CURRENT CART TOTAL ($PRICE)
   // PRICE TOTAL FUNCTION
     // ADD ANOTHER CART FUNCTION THAT TAKES A NUMBER AND NAME, SO WHEN YOU TYPE IN HOW MANY OF AN ITEM YOU WANT IT FILTERS 
     // CART AND CHECKS IF AMOUNT IS HIGHER OR LOWER
@@ -65,7 +63,6 @@ function App() {
     setCurrCart([]);
   }
 
-
   const cartValue = currCart.reduce(
     (prevProduct, currProduct) => prevProduct + currProduct.Price, 0
   );
@@ -74,7 +71,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navbar cart={currCart}/>}>
           <Route path='/' element={<Homepage/>}/>
-          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/checkout' element={<Checkout cart={currCart} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} clearCart={handleClearCart}/>}/>
           <Route path='/products' element={<Storefront/>}/>
           <Route path="/products/:productID" element={<Product value={cartValue} addToCart={handleAddToCart}/>}/>
         </Route>

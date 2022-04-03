@@ -27,7 +27,7 @@ export const Product = ({addToCart, value}: MyProps) => {
       title: "Succesfully Added To Cart!",
       message: `Cart Total is $${value}`,
       color: "lime",
-      autoClose: 1500,
+      sx: {'@media (max-width: 880px)': {display: "none"}},
       icon: <FontAwesomeIcon icon={faCheck}/>,
     })
   },[value])
