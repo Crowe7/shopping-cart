@@ -4,6 +4,7 @@ import {Product} from '../components/Product';
 import {Router, useNavigate, useParams} from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import App from '../App';
+import userEvent from '@testing-library/user-event';
 describe("Product page", () => {
     test("Page returns error if bad data is given", () => {
         const history = createMemoryHistory();
@@ -25,4 +26,16 @@ describe("Product page", () => {
 
         expect(screen.getByRole('heading', {name: "Calico"})).toBeInTheDocument();
     })
+    test("Clicking add to cart updates cart properly", () => {
+        const history = createMemoryHistory();
+        render(
+            <Router navigator={history} location={"/products/Calico"}>
+                <App/>
+            </Router>
+        );
+        const button = screen.getByRole("button", {name:"Add To Cart"});
+        userEvent.dblClick(button);
+        expect(screen.getByLabelText("Quantity").innerHTML).toMatch("2")
+    })
 })
+// expect(screen.getByLabelText("Quantity")).toBeInTheDocument()

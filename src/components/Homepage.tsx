@@ -7,31 +7,22 @@ import {Link} from 'react-router-dom'
 export default function Homepage() {
   return (
     <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", height: "80vh"}}>
-      <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", '@media (max-width: 450px)': {flexDirection: "column-reverse"}}}>
+      <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", '@media (max-width: 1400px)': {flexDirection: "column-reverse"}}}>
 
-        <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", height: 150}}>
+        <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", height: 150. }}>
 
-          <Title sx={{
-                        fontSize: 40,
-                        padding: 20, 
-                        '@media (max-width: 450px)': {color: "#F1FAEE", marginLeft: "20px"}
-                      }} order={1}>Unlo<span style={{color: "#F1FAEE",}}>cking Fun for the Whole Fam</span>ily! </Title>
+          <Title sx={{fontSize: 40, padding: 20, '@media (max-width: 1400px)': {color: "#F1FAEE", marginLeft: "15px", textAlign: "center"}}} order={1}>Unlo<span style={{color: "#F1FAEE", }}>cking Fun for the Whole Fam</span>ily! </Title>
           <Button sx={{width: "50%", padding: 20}} size='xl' component={Link} to='/products'>View Products</Button>
           <Image
             src={homepageBlob}
             width={900}
-            sx={{position: "relative", zIndex: -1, bottom: 350, '@media (max-width: 450px)': {display: "none"}}}
+            sx={{position: "relative", zIndex: -1, bottom: 350, '@media (max-width: 1400px)': {display: "none"}}}
           />
         </Box>
         <Image
-<<<<<<< HEAD
-          sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (max-width: 1450px) and (min-width: 700px)': {width: "500px"}}}
-=======
-          sx={{width: 630, height: 330, '@media (max-width: 450px)': {height:"200px", width: "300px"}, '@media (min-width: 1450px) and (max-width: 1600px)': {width: "500px"}}}
->>>>>>> 791af6d89cd397730599edf522d2a26ce3cc44fa
+          sx={{width: 630, height: 330, '@media (max-width: 750px)': {height:"200px", width: "300px"}, '@media (min-width: 750px) and (max-width: 1600px)': {width: "500px"}}}
           radius="lg"
           src={homepageImage}
-
           alt="Group Of Creative Friends Sitting At Wooden Table. People Having Fun While Playing Board Game"
         />
       </Box>
@@ -45,7 +36,7 @@ export default function Homepage() {
               backgroundSize: "cover",
               backgroundImage: `url(${background})`,
               zIndex: -2,
-              '@media (max-width: 450px)': {aspectRatio: "960/2500",}
+              '@media (max-width: 1400px)': {aspectRatio: "960/2500",}
             }}></Box>
     </Box>
   )

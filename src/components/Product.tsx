@@ -1,5 +1,5 @@
-import { BackgroundImage, Box, Button, Image, MediaQuery, SimpleGrid, Title } from '@mantine/core'
-import { height } from '@mui/system'
+import { Box, Button, SimpleGrid, Title } from '@mantine/core'
+import { Link } from 'react-router-dom'
 import React, { MouseEventHandler } from 'react'
 import { useParams } from 'react-router-dom'
 import {getProduct} from '../utils/data'
@@ -44,7 +44,10 @@ export const Product = ({addToCart}: MyProps) => {
     )
   }
   return (
-    <h1>error</h1>
+    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", height: "90vh", flexDirection: "column"}}>
+      <h1>Oops! We couldnt find that product!</h1>
+      <Button<typeof Link> sx={{marginTop: 20}} component={Link} to="/" size='xl'>Back Home</Button>
+    </Box>
   )
 }
 
