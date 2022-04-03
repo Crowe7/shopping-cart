@@ -14,7 +14,7 @@ describe("Product page", () => {
             </Router>
         );
 
-        expect(screen.getByRole('heading', {name: "error"})).toBeInTheDocument();
+        expect(screen.getByRole('heading', {name: "Oops! We couldnt find that product!"})).toBeInTheDocument();
     })
     test("Page returns product with correct data", () => {
         const history = createMemoryHistory();
