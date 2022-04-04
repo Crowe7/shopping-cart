@@ -24,5 +24,6 @@ describe('Storefront', () => {
         const productNumber = ProductData.length
         const imgElements = screen.getAllByAltText(/.*?/);
         expect(imgElements.length).toEqual(productNumber)
-    })
+    });
+    
 })
