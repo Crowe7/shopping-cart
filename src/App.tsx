@@ -25,11 +25,10 @@ import {Product} from './components/Product';
 // DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
 
 // TODO TOMMOROW
-  // PRICE TOTAL FUNCTION
-    // ADD ANOTHER CART FUNCTION THAT TAKES A NUMBER AND NAME, SO WHEN YOU TYPE IN HOW MANY OF AN ITEM YOU WANT IT FILTERS 
-    // CART AND CHECKS IF AMOUNT IS HIGHER OR LOWER
-    // IF LOWER CALL REMOVE FROM CART UNTIL YOU REACH THE NUMBER
-    // IF HIGHER CALL ADD TO CART UNTIL REACH NUMBER
+    // FINISH CART!
+    // TEST IT!
+    // STYLE IT!
+    // REPSONSIVE!
 // 
 
 function App() {
@@ -71,7 +70,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navbar cart={currCart}/>}>
           <Route path='/' element={<Homepage/>}/>
-          <Route path='/checkout' element={<Checkout cart={currCart} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} clearCart={handleClearCart}/>}/>
+          <Route path='/checkout' element={<Checkout cart={currCart} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} clearCart={handleClearCart} value={cartValue}/>}/>
           <Route path='/products' element={<Storefront/>}/>
           <Route path="/products/:productID" element={<Product value={cartValue} addToCart={handleAddToCart}/>}/>
         </Route>
