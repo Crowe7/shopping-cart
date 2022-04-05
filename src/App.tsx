@@ -59,6 +59,11 @@ function App() {
     }
   }
 
+  const removeAllSameItems = (name:string) => () => {
+    setCurrCart(currCart.filter((product) => (product.Name !== name)))
+  }
+
+
   const handleClearCart = () => {
     setCurrCart([]);
   }
@@ -66,12 +71,19 @@ function App() {
   const cartValue = currCart.reduce(
     (prevProduct, currProduct) => prevProduct + currProduct.Price, 0
   );
+
+  const getTotalItemValue = (name:string) => {
+    let itemToTotal = currCart.filter((product) => (product.Name === name));
+    return itemToTotal.reduce(
+      (prevProduct, currProduct) => prevProduct + currProduct.Price, 0
+    );
+  }
   
   return (
       <Routes>
         <Route path='/' element={<Navbar cart={currCart}/>}>
           <Route path='/' element={<Homepage/>}/>
-          <Route path='/checkout' element={<Checkout cart={currCart} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} clearCart={handleClearCart} value={cartValue}/>}/>
+          <Route path='/checkout' element={<Checkout cart={currCart} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} clearCart={handleClearCart} value={cartValue} itemValue={getTotalItemValue} removeAllSameItems={removeAllSameItems}/>}/>
           <Route path='/products' element={<Storefront/>}/>
           <Route path="/products/:productID" element={<Product value={cartValue} addToCart={handleAddToCart}/>}/>
         </Route>
