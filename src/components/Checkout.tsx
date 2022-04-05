@@ -2,6 +2,8 @@ import { Box, Button, SimpleGrid, Title } from '@mantine/core'
 import React, { MouseEventHandler } from 'react'
 import { productInterface } from '../utils/productData'
 import { Link } from 'react-router-dom'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
 type MyProps = {
   cart: productInterface[],
   addToCart: Function,
@@ -18,13 +20,32 @@ export const Checkout = ({cart, addToCart, removeFromCart, clearCart, value}: My
       self.findIndex(p => p.Name === product.Name) === idx);
 
     return (
-      <Box>
-        <SimpleGrid cols={1} spacing="xl" >
+      <Box sx={{display: "flex", 
+                border: "1px solid black", 
+                justifyContent: "center",
+                alignItems: "center"
+              }}>
+        <SimpleGrid cols={1} spacing="xl" sx={{border: "1px solid black", width: "700px", height: "80vh", marginTop: "6vh"}} >
           {uniqueProducts.map((product) => {
               let quantity = cart.filter(p => p.Name === product.Name).length
-              return  <Box key={product.Name}>
+              return  <Box key={product.Name} sx={{border:"1px solid black"}}>
+
                 <Title order={1}>{product.Name}</Title>
-                <Title order={3}>{quantity}</Title>
+                <Box sx={{
+                  backgroundImage: `url(${product.Img})`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  width: 100, 
+                  height: 100, 
+                  '@media (max-width: 880px)': {width: 50} 
+                }}>
+        </Box>
+                <Box sx={{display:"flex",}}>
+                  <Button size='xs' onClick={removeFromCart(product.Name)} sx={{fontSize: "16px", padding: 4}} variant="subtle"><FontAwesomeIcon icon={faAngleLeft}/></Button>
+                  <Title order={3}>{quantity}</Title>
+                  <Button size='xs' onClick={addToCart(product.Name)} sx={{fontSize: "16px", padding: 4}} variant="subtle"><FontAwesomeIcon icon={faAngleRight}/></Button>
+                </Box>
               </Box>
             })
           }
