@@ -26,10 +26,11 @@ export const Checkout = ({cart, addToCart, removeFromCart, clearCart, value, ite
     return (
       <Box sx={{display: "flex", 
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+                '@media (max-width: 1380px)': {flexDirection: 'column-reverse'}
               }}>
-        <ScrollArea scrollbarSize={7} sx={{height: "90vh"}}>     
-        <SimpleGrid cols={1} spacing="xl" sx={{width: "700px", marginTop: "6vh", marginLeft: "100px"}} >
+        <ScrollArea scrollbarSize={7} sx={{height: "90vh", '@media (max-width: 1380px)': {height: "80vh"}, '@media (max-width: 980px)': {height: "70vh"}}}>     
+        <SimpleGrid cols={1} spacing="xl" sx={{width: "700px", marginTop: "6vh", marginLeft: "100px", '@media (max-width: 980px)': {marginLeft: 0} }} >
           {uniqueProducts.map((product) => {
               let quantity = cart.filter(p => p.Name === product.Name).length
               return  <Box key={product.Name} sx={{borderBottom:"2px solid #1D3557", height:"200px"}}>
@@ -37,7 +38,7 @@ export const Checkout = ({cart, addToCart, removeFromCart, clearCart, value, ite
                   <Title order={1}>{product.Name}</Title>
                 </Box>
                 <Box sx={{display: "flex", justifyContent: "center"}}>
-                  <Box sx={{marginLeft: "275px"}}>
+                  <Box sx={{marginLeft: "275px", '@media (max-width: 1380px)': {marginLeft: 0}}}>
                     <Box sx={{
                       backgroundImage: `url(${product.Img})`,
                       backgroundSize: "cover",
@@ -45,7 +46,6 @@ export const Checkout = ({cart, addToCart, removeFromCart, clearCart, value, ite
                       backgroundPosition: "center",
                       width: 100, 
                       height: 100, 
-                      '@media (max-width: 880px)': {width: 50} 
                     }}>
                     </Box>
                     <Box sx={{display:"flex",  width: 100, justifyContent: "space-around"}}>
@@ -64,7 +64,7 @@ export const Checkout = ({cart, addToCart, removeFromCart, clearCart, value, ite
           }
         </SimpleGrid>
         </ScrollArea>   
-        <Box sx={{display: "flex", flexDirection: "column", marginLeft:"100px", alignItems:"center"}}>
+        <Box sx={{display: "flex", flexDirection: "column", '@media (min-width: 1000px)': {marginLeft:"100px"}, alignItems:"center", marginBottom: "10px"}}>
           <Title order={1}>{`Cart Total: $${value}`}</Title>
           <Box sx={{display: "flex", gap: "15px"}}>
             <Button size='xl' onClick={clearCart}>Clear Cart</Button>
