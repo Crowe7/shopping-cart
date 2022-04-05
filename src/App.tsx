@@ -49,9 +49,10 @@ function App() {
     if(currCart.length < 1) {
       return 
     }
-    for(let product of currCart) {
-      if(product.Name === name) {
-        let ID = product.ID
+    // reverse loop to preserve cart add order
+    for(let i = currCart.length - 1; i >=0; i--) {
+      if(currCart[i].Name === name) {
+        let ID = currCart[i].ID
         setCurrCart(currCart.filter((product)=> (product.ID !== ID)))
         break
       }
