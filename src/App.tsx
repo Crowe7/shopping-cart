@@ -8,29 +8,6 @@ import { Storefront } from './components/Storefront';
 import { v4 as uuid } from 'uuid';
 import {Product} from './components/Product';
 
-// checkout needs to show whats in cart and also allow changes to quantity in popup
-
-// product cards need plus and minus buttons along with being able to type in quantity number
-// product cards need a go to cart button
-
-// responsive design on this one along with using grid
-// tesing as well
-
-// TODO COMPONENTS:
-// APP : STATE IS WHATS IN CART
-// HOMEPAGE : PULLS STATE FROM APP
-// CHECKOUT GET NUMBER OF ITEMS IN CART AND ALSO HAS ADD TO CART AND REMOVE FUNCTIONS... ALONG WITH TOTAL PRICE 
-// CARD : PULLS ADD TO CART FUNCTION FROM APP
-
-// DONT TEST IMPLEMENTATION DETAILS ONLY TEST UI CHANGES 
-
-// TODO TOMMOROW
-    // FINISH CART!
-    // TEST IT!
-    // STYLE IT!
-    // REPSONSIVE!
-// 
-
 function App() {
 
   const [currCart, setCurrCart] = useState<productInterface[]>([]);

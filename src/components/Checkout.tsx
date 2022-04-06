@@ -33,7 +33,7 @@ export const Checkout = ({cart, addToCart, removeFromCart, clearCart, value, ite
         <SimpleGrid cols={1} spacing="xl" sx={{width: "700px", marginTop: "6vh", marginLeft: "100px", '@media (max-width: 980px)': {marginLeft: 0} }} >
           {uniqueProducts.map((product) => {
               let quantity = cart.filter(p => p.Name === product.Name).length
-              return  <Box key={product.Name} sx={{borderBottom:"2px solid #1D3557", height:"200px"}}>
+              return  <Box key={product.Name} sx={{height:"200px"}}>
                 <Box sx={{display: "flex", justifyContent: "center"}}>
                   <Title order={1}>{product.Name}</Title>
                 </Box>
@@ -49,9 +49,9 @@ export const Checkout = ({cart, addToCart, removeFromCart, clearCart, value, ite
                     }}>
                     </Box>
                     <Box sx={{display:"flex",  width: 100, justifyContent: "space-around"}}>
-                      <Button size='xs' onClick={removeFromCart(product.Name)} sx={{fontSize: "16px"}} variant="subtle"><FontAwesomeIcon icon={faAngleLeft}/></Button>
+                      <Button size='xs' aria-label='remove' onClick={removeFromCart(product.Name)} sx={{fontSize: "16px"}} variant="subtle"><FontAwesomeIcon icon={faAngleLeft}/></Button>
                       <Title order={3}>{quantity}</Title>
-                      <Button size='xs' onClick={addToCart(product.Name)} sx={{fontSize: "16px"}} variant="subtle"><FontAwesomeIcon icon={faAngleRight}/></Button>
+                      <Button size='xs' aria-label='add' onClick={addToCart(product.Name)} sx={{fontSize: "16px"}} variant="subtle"><FontAwesomeIcon icon={faAngleRight}/></Button>
                     </Box>
                   </Box>
                   <Box sx={{marginLeft:"70px"}}>
