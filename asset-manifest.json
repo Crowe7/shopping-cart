@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.945e98fd.css",
+    "main.js": "/shopping-cart/static/js/main.48156996.js",
+    "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
+    "static/media/homepageImage.jpg": "/shopping-cart/static/media/homepageImage.101e7108b677a17f4b51.jpg",
+    "static/media/Azul.png": "/shopping-cart/static/media/Azul.a80c0cb8291ce962afb6.png",
+    "static/media/Patchwork.png": "/shopping-cart/static/media/Patchwork.b9008fb02636fbc5304f.png",
+    "static/media/Pandemic.png": "/shopping-cart/static/media/Pandemic.eb19926fa1dc3d58ae5b.png",
+    "static/media/Wingspan.png": "/shopping-cart/static/media/Wingspan.4ac0c37a546b0022540e.png",
+    "static/media/Calico.png": "/shopping-cart/static/media/Calico.cc58b4f2039694f301b8.png",
+    "static/media/Splendor.png": "/shopping-cart/static/media/Splendor.34b9c2071788e5f53564.png",
+    "static/media/Clank.png": "/shopping-cart/static/media/Clank.9d25c5cf600560a31cea.png",
+    "static/media/TerraformingMars.png": "/shopping-cart/static/media/TerraformingMars.c895d24608c4bd63f7e9.png",
+    "static/media/Iwari.png": "/shopping-cart/static/media/Iwari.91b85f97efefce619089.png",
+    "static/media/Codenames.png": "/shopping-cart/static/media/Codenames.ac7c84a228ae5e48439e.png",
+    "static/media/Catan.png": "/shopping-cart/static/media/Catan.cf166bd1561c5fc20092.png",
+    "static/media/Onitama.png": "/shopping-cart/static/media/Onitama.6572200e31cba7fb14c9.png",
+    "static/media/Startups.png": "/shopping-cart/static/media/Startups.50a279bd2cf5b4bb9e4d.png",
+    "static/media/homepageBlob.png": "/shopping-cart/static/media/homepageBlob.9b1dca72ee203c210ce0.png",
+    "static/media/background.svg": "/shopping-cart/static/media/background.df7c42c8326288ca90fe153e3107f2d0.svg",
+    "index.html": "/shopping-cart/index.html",
+    "main.945e98fd.css.map": "/shopping-cart/static/css/main.945e98fd.css.map",
+    "main.48156996.js.map": "/shopping-cart/static/js/main.48156996.js.map",
+    "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.945e98fd.css",
+    "static/js/main.48156996.js"
+  ]
+}
