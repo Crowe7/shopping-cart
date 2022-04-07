@@ -13,6 +13,7 @@ Mockup of an e-commerce site with functional shopping cart
 ## Built with
 
 - [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Mantine](https://mantine.dev/)
 - [Jest](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
