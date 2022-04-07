@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import { AppShell, Title, Header, Box, MediaQuery, Button, Badge } from '@mantine/core';
 import { Outlet, Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'

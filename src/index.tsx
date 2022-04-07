@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {Routes, Route, HashRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -8,11 +8,11 @@ import { NotificationsProvider } from '@mantine/notifications';
 ReactDOM.render(
   
     <React.StrictMode>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
             <Route path='*' element={<NotificationsProvider limit={3} autoClose={1500}> <App /> </NotificationsProvider>}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </React.StrictMode>,
   document.getElementById('root')
 );

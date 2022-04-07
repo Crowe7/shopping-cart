@@ -4,7 +4,6 @@ import { productInterface } from '../utils/productData'
 import { Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
-import { height } from '@mui/system'
 // function(arg: type): returnType how to type out function props
 type MyProps = {
   cart: productInterface[],
