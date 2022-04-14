@@ -3,8 +3,7 @@ import { render, screen } from '@testing-library/react';
 import App from '../App';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
-import { Checkout } from '../components/Checkout';
+
 
 
 describe("Checkout Page", () => {
