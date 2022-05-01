@@ -30,7 +30,7 @@ export const Navbar = ({cart}: MyProps) => {
                     <Box sx={{display: "flex"}}>
                       <Button size='lg' sx={{marginRight:10, width: 140}} component={Link} to='/'>Home</Button>
                       <Button size='lg' sx={{marginRight:20}} component={Link} to='/products'>Products</Button>
-                      <Box sx={{display: "flex", flexDirection: "column"}}>
+                      <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
                         <Button aria-label='Checkout' sx={{height:45, width: 45, padding: 0, fontSize:20, borderRadius:"25px" }} component={Link} to='/checkout'><FontAwesomeIcon icon={faCartShopping} /></Button>
                         {CartQuantity !== undefined && CartQuantity > 0 &&
                           <Badge aria-label='Quantity' sx={{position: "absolute", padding:6 , marginTop: 28, backgroundColor:"#fe6d73", color:"white", pointerEvents: "none"}} size='md'>{`${CartQuantity}`}</Badge>
