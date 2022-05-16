@@ -1,4 +1,4 @@
-import { Box, Button, SimpleGrid, Title } from '@mantine/core'
+import { Box, Button, createStyles, SimpleGrid, Title } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import React, { MouseEventHandler, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
@@ -14,8 +14,47 @@ type MyProps = {
   value: number
 }
 
+const useStyles = createStyles((theme) => ({
+  productWrapper: {
+    display: "flex", 
+    justifyContent: "center", 
+    height: "90vh", 
+    alignItems: "center", 
+    '@media (max-width: 880px)': {flexDirection: "column", marginTop: 100}
+  },
+
+  img: {
+    backgroundSize: "contain",
+    backgroundColor: "#eef7fa",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: 550, 
+    height: 550, 
+    '@media (max-width: 880px)': {width: 350} 
+  },
+
+  gridWrapper: {
+    padding: 100, 
+    '@media (max-width: 880px)': {display: "flex", justifyContent: "center", flexDirection: "column", alignItems:"center"}
+  },
+  
+  productNotFound: {
+    display: "flex", 
+    justifyContent: "center", 
+    alignItems: "center", 
+    height: "90vh", 
+    flexDirection: "column"
+  },
+
+  backHomeButton: {
+    marginTop: 20
+  }
+
+}))
+
 
 export const Product = ({addToCart, value}: MyProps) => {
+  const { classes } = useStyles() 
 
   const mounted = useRef(false);
   useEffect(() => {
@@ -44,19 +83,10 @@ export const Product = ({addToCart, value}: MyProps) => {
   
   if(productInfo) {  
     return (
-      <Box sx={{display: "flex", justifyContent: "center", height: "90vh", alignItems: "center", '@media (max-width: 880px)': {flexDirection: "column", marginTop: 100}}}>
-        <Box sx={{
-                  backgroundImage: `url(${productInfo.Img})`,
-                  backgroundSize: "contain",
-                  backgroundColor: "#eef7fa",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  width: 550, 
-                  height: 550, 
-                  '@media (max-width: 880px)': {width: 350} 
-                }}>
+      <Box className={classes.productWrapper}>
+        <Box sx={{backgroundImage: `url(${productInfo.Img})`}} className={classes.img}>
         </Box>
-        <SimpleGrid cols={1} spacing="sm" sx={{padding: 100, '@media (max-width: 880px)': {display: "flex", justifyContent: "center", flexDirection: "column", alignItems:"center"}}}>
+        <SimpleGrid cols={1} spacing="sm" className={classes.gridWrapper}>
           <Title order={1}>{`${productInfo.Name}`}</Title>
           <Title order={2}>{` Price: $${productInfo.Price}`}</Title>
           <Button size='xl' onClick={addToCart(`${productInfo?.Name}`)}>Add To Cart</Button>
@@ -65,9 +95,9 @@ export const Product = ({addToCart, value}: MyProps) => {
     )
   }
   return (
-    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", height: "90vh", flexDirection: "column"}}>
+    <Box className={classes.productNotFound}>
       <h1>Oops! We couldnt find that product!</h1>
-      <Button<typeof Link> sx={{marginTop: 20}} component={Link} to="/" size='xl'>Back Home</Button>
+      <Button<typeof Link> className={classes.backHomeButton} component={Link} to="/" size='xl'>Back Home</Button>
     </Box>
   )
 }
