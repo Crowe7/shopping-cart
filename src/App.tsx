@@ -7,10 +7,18 @@ import {Checkout} from './components/Checkout';
 import { Storefront } from './components/Storefront';
 import { v4 as uuid } from 'uuid';
 import {Product} from './components/Product';
+import { setStartingCart, useLoggedOut } from './utils/localStorage';
 
 function App() {
+  const initCart: productInterface[] = setStartingCart("cart");
 
-  const [currCart, setCurrCart] = useState<productInterface[]>([]);
+  const [currCart, setCurrCart] = useState<productInterface[]>(initCart);
+
+  // custom hook to handle local storage for current cart
+  // will use setLocalCart for clearing when user logs out of account
+  const [localCart, setLocalCart] = useLoggedOut("cart", currCart);
+ 
+  
 
   const handleAddToCart = (name:string) => () => {
     for(let product of ProductData) {
