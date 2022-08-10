@@ -7,7 +7,7 @@ import {Checkout} from './components/Checkout';
 import { Storefront } from './components/Storefront';
 import { v4 as uuid } from 'uuid';
 import {Product} from './components/Product';
-import { setStartingCart, useLoggedOut } from './utils/localStorage';
+import { setStartingCart, useLoggedOut } from './hooks/localStorage';
 
 function App() {
   const initCart: productInterface[] = setStartingCart("cart");
@@ -17,8 +17,7 @@ function App() {
   // custom hook to handle local storage for current cart
   // will use setLocalCart for clearing when user logs out of account
   const [localCart, setLocalCart] = useLoggedOut("cart", currCart);
- 
-  
+
 
   const handleAddToCart = (name:string) => () => {
     for(let product of ProductData) {
@@ -47,7 +46,6 @@ function App() {
   const removeAllSameItems = (name:string) => () => {
     setCurrCart(currCart.filter((product) => (product.Name !== name)))
   }
-
 
   const handleClearCart = () => {
     setCurrCart([]);
@@ -81,8 +79,6 @@ export default App;
 // TODO
 
 /*
-
-ADD LOCAL STORAGE FOR CURR ITEMS IN CART
 
 FUNCTION NEEDS TO CHECK IF PERSON IS SIGNED IN FIRST
 

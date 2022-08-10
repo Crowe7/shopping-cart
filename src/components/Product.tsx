@@ -7,6 +7,7 @@ import { productInterface } from '../utils/productData'
 import { showNotification } from '@mantine/notifications';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { useValueNotification } from '../hooks/valueNotification'
 // function(arg: type): returnType how to type out function props
 
 type MyProps = {
@@ -56,20 +57,7 @@ const useStyles = createStyles((theme) => ({
 export const Product = ({addToCart, value}: MyProps) => {
   const { classes } = useStyles() 
 
-  const mounted = useRef(false);
-  useEffect(() => {
-    if(!mounted.current) {
-      mounted.current = true
-      return
-    }
-    showNotification({
-      title: "Succesfully Added To Cart!",
-      message: `Cart Total is $${value}`,
-      color: "lime",
-      sx: {'@media (max-width: 880px)': {display: "none"}},
-      icon: <FontAwesomeIcon icon={faCheck}/>,
-    })
-  },[value])
+  useValueNotification(value);
 
 
   let params = useParams();

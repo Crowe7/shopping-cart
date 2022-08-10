@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { productInterface } from "./productData";
+import { productInterface } from "../utils/productData";
 
 // dummy logged in variable
 // const loggedIn = false
