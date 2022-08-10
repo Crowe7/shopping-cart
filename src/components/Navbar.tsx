@@ -4,6 +4,7 @@ import { Outlet, Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { productInterface } from '../utils/productData';
+import { useCartQuantity } from '../hooks/cartQuantity';
 // function(arg: type): returnType how to type out function props
 type MyProps = {
   cart?: productInterface[]
@@ -68,13 +69,7 @@ const useStyles = createStyles((theme) => ({
 export const Navbar = ({cart}: MyProps) => {
   const { classes } = useStyles() 
 
-  const [CartQuantity, setCartQuantity] = useState(cart?.length)
-
-
-
-  useEffect(() => {
-    setCartQuantity(cart?.length)
-  }, [cart])
+  const cartQuantity = useCartQuantity(cart)
 
   return (
     <AppShell
@@ -90,8 +85,8 @@ export const Navbar = ({cart}: MyProps) => {
                       <Box className={classes.checkoutWrapper}>
                         <Button aria-label='Checkout' className={classes.checkoutButton} component={Link} to='/checkout'><FontAwesomeIcon icon={faCartShopping} /></Button>
 
-                        {CartQuantity !== undefined && CartQuantity > 0 &&
-                          <Badge aria-label='Quantity' className={classes.cartQuantity} size='md'>{`${CartQuantity}`}</Badge>
+                        {cartQuantity !== undefined && cartQuantity > 0 &&
+                          <Badge aria-label='Quantity' className={classes.cartQuantity} size='md'>{`${cartQuantity}`}</Badge>
                         }
                                             
                       </Box>
